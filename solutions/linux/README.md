@@ -15,23 +15,35 @@ Imagine you're managing a **Linux-based production server** and need to ensure t
 - Learn about Linux **users, groups, and permissions** (`/etc/passwd`, `/etc/group`).
 - **Task:**  
   - Create a user `devops_user` and add them to a group `devops_team`.
+  
   <img src="images/1.png" width="700"/>
+
   <img src="images/2.png" width="700"/>
+
   - Set a password and grant **sudo** access.
+  
   <img src="images/3.png" width="700"/>
+
   <img src="images/4.png" width="700"/>
+
   - Restrict SSH login for certain users in `/etc/ssh/sshd_config`.
+  
   <img src="images/5.png" width="700"/>
+
   <img src="images/6.png" width="700"/>
 ---
 
 ### **2️⃣ File & Directory Permissions**
 - **Task:**  
   - Create `/devops_workspace` and a file `project_notes.txt`.
+  
   <img src="images/7.png" width="700"/>
+
   - Set permissions:
     - **Owner can edit**, **group can read**, **others have no access**.
+  
   <img src="images/8.png" width="700"/>
+
   - Use `ls -l` to verify permissions.
 
 ---
