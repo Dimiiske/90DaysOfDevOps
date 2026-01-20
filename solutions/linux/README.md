@@ -55,10 +55,21 @@ Logs are crucial in DevOps! You’ll analyze logs using the **Linux_2k.log** fil
   - **Download the log file** from the repository.
   - **Extract insights using commands:**
     - Use `grep` to find all occurrences of the word **"error"**.
+
+    <img src="images/9.png" width="700"/>
+
     - Use `awk` to extract **timestamps and log levels**.
+
+    <img src="images/10.png" width="700"/>
+
     - Use `sed` to replace all IP addresses with **[REDACTED]** for security.
+
+    <img src="images/11.png" width="700"/>
+
   - **Bonus:** Find the most frequent log entry using `awk` or `sort | uniq -c | sort -nr | head -10`.
 
+  <img src="images/12.png" width="700"/>
+  
 ---
 
 ### **4️⃣ Volume Management & Disk Usage**
