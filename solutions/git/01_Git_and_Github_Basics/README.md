@@ -28,6 +28,8 @@
      cd 2025/git/01_Git_and_Github_Basics
      ```
 
+    <img src="images/1.png" width="700"/>
+
 ---
 
 ### Задача 2: Инициализация локального репозитория и создание файла
@@ -38,14 +40,20 @@
      cd week-4-challenge
      ```
 
+    <img src="images/2.png" width="700"/>
+
 2. **Инициализировать Git репозиторий:**  
    - Инициализируйте директорию как новый Git репозиторий:
      ```bash
      git init
      ```
 
+    <img src="images/3.png" width="700"/>
+
 3. **Создать файл:**  
    - Создайте файл `info.txt` и добавьте начальное содержимое (например, ваше имя и краткое представление).
+
+  <img src="images/4.png" width="700"/>
 
 4. **Добавить в stage и сделать коммит:**  
    - Добавьте файл в stage:
@@ -56,6 +64,8 @@
      ```bash
      git commit -m "Initial commit: Add info.txt with introductory content"
      ```
+
+    <img src="images/5.png" width="700"/>
 
 ---
 
@@ -75,16 +85,24 @@
    ```bash
    git remote set-url origin https://<your-username>:<your-PAT>@github.com/<your-username>/90DaysOfDevOps.git
    ```
+
+  <img src="images/6.png" width="700"/>
+
 2. **Запушить ваш коммит на удаленный репозиторий:**  
    - Запушьте вашу текущую ветку (обычно `main`) и установите upstream:
      ```bash
      git push -u origin main
      ```
+
+    <img src="images/7.png" width="700"/>
+
 3. **(Опционально) Pull изменений с удаленного репозитория:**  
    - Проверьте вашу конфигурацию сделав pull изменений:
      ```bash
      git pull origin main
      ```
+
+    <img src="images/8.png" width="700"/>
 
 ---
 
@@ -96,6 +114,8 @@
      ```
    - Запомните хэш коммита и детали, так как вы будете ссылаться на них в документации.
 
+  <img src="images/9.png" width="700"/>
+
 ---
 
 ### Задача 5: Продвинутое ветвление и переключение
@@ -104,6 +124,8 @@
      ```bash
      git branch feature-update
      ```
+
+    <img src="images/10.png" width="700"/>
   
 2. **Переключиться на новую ветку:**  
    - Переключитесь используя `git switch`:
@@ -115,6 +137,9 @@
      git checkout feature-update
      ```
 
+    <img src="images/11.png" width="700"/>
+    
+
 3. **Изменить файл и сделать коммит:**  
    - Отредактируйте `info.txt` (например, добавьте больше деталей или улучшений).
    - Добавьте в stage и сделайте коммит:
@@ -123,8 +148,14 @@
      git commit -m "Feature update: Enhance info.txt with additional details"
      git push origin feature-update
      ```
+
+    <img src="images/12.png" width="700"/>
+    
    - Смерджите эту ветку в `main` через Pull Request на GitHub.
    
+    <img src="images/13.png" width="700"/>
+
+  
 4. **(Продвинуто) Опциональный дополнительный челлендж:**  
    - Если чувствуете уверенность, создайте другую ветку (например `experimental`) из вашей main ветки, сделайте конфликтующее изменение в `info.txt`, затем вернитесь в `feature-update` и смерджите `experimental` чтобы смоделировать конфликт слияния. Разрешите конфликт вручную, затем сделайте коммит с разрешением. 
    > *Примечание: Этот дополнительный шаг опционален и предназначен для тех, кто ищет дополнительный вызов.*
