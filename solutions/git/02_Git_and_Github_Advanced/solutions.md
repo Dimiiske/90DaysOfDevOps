@@ -104,16 +104,24 @@
    ```bash
    echo "Temporary Change" >> temp.txt
    git add temp.txt
-   ```  
+   ```
+
+   <img src="img/8.png" width="700"/>
+
 2. Сохраните изменения.  
    ```bash
    git stash
    ```  
+
+   <img src="img/9.png" width="700"/>
+
 3. Переключитесь на другую ветку и используйте накопленные ресурсы..  
    ```bash
    git checkout main
    git stash pop
    ```  
+
+   <img src="img/10.png" width="700"/>
 
 **Записать в `solution.md`**  
 - Когда использовать `git stash`.  
