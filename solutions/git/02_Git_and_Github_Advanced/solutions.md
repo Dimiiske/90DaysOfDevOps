@@ -81,6 +81,8 @@
    ```bash
    git reset --hard HEAD~1
    ```  
+   <img src="img/6.png" width="700"/>
+
 5. Безопасная отмена коммита.  
    ```bash
    git revert HEAD
