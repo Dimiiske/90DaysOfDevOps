@@ -80,11 +80,16 @@
 4. Полная перезагрузка (удаляет все изменения).  
    ```bash
    git reset --hard HEAD~1
-   ```  
+   ```
+
+   <img src="img/6.png" width="700"/>
+
 5. Безопасная отмена коммита.  
    ```bash
    git revert HEAD
    ```  
+
+   <img src="img/7.png" width="700"/>
 
 **Записать в `solution.md`**  
 - Различия между `reset` и `revert`.  
