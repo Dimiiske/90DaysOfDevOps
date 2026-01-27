@@ -37,8 +37,12 @@
 3. Отправьте изменения и создайте запрос на слияние (Pull Request).  
    ```bash
    git push origin feature-branch
-   ```  
+   ```
+   <img src="img/1.png" width="700"/>
+
 4. Создайте запрос на слияние (PR) на GitHub, запросите проверку и объедините его после одобрения.
+
+   <img src="img/2.png" width="700"/>
 
 **Записать в `solution.md`**  
 - Шаги по созданию запроса на слияние (PR).
@@ -55,23 +59,37 @@
    echo "Wrong code" >> wrong.txt
    git add .
    git commit -m "Committed by mistake"
-   ```  
+   ```
+
+   <img src="img/3.png" width="700"/>
+
 2. Мягкая перезагрузка (сохраняет изменения в исходном состоянии).  
    ```bash
    git reset --soft HEAD~1
-   ```  
+   ```
+
+   <img src="img/4.png" width="700"/>
+
 3. Смешанный сброс (отменяет отметку об изменениях, но сохраняет файлы).  
    ```bash
    git reset --mixed HEAD~1
    ```  
+
+   <img src="img/5.png" width="700"/>
+
 4. Полная перезагрузка (удаляет все изменения).  
    ```bash
    git reset --hard HEAD~1
-   ```  
+   ```
+
+   <img src="img/6.png" width="700"/>
+
 5. Безопасная отмена коммита.  
    ```bash
    git revert HEAD
    ```  
+
+   <img src="img/7.png" width="700"/>
 
 **Записать в `solution.md`**  
 - Различия между `reset` и `revert`.  
