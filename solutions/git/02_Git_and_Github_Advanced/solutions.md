@@ -136,10 +136,17 @@
    ```bash
    git log --oneline
    ```  
+   
+   <img src="img/8.png" width="700"/>
+
 2. Примените конкретный коммит к текущей ветке. 
    ```bash
    git cherry-pick <commit-hash>
-   ```  
+   ```
+
+   <img src="img/9.png" width="700"/>
+
+
 3. Разрешите любые конфликты, если таковые имеются.  
    ```bash
    git cherry-pick --continue
