@@ -21,38 +21,76 @@
 
 ## Challenge Tasks
 
-### Task 1: Introduction and Conceptual Understanding
-1. **Write an Introduction:**  
-   - In your `solution.md`, provide a brief explanation of Docker’s purpose in modern DevOps.
-   - Compare **Virtualization vs. Containerization** and explain why containerization is the preferred approach for microservices and CI/CD pipelines.
+### Задача 1: Введение и концептуальное понимание
+1. **Написать введение:**  
+   - В файле `solution.md` кратко объясните назначение Docker в современном DevOps.
+   - Сравните **виртуализацию и контейнеризацию** и объясните, почему контейнеризация является предпочтительным подходом для микросервисов и конвейеров CI/CD.
 
 ---
 
-### Task 2: Create a Dockerfile for a Sample Project
-1. **Select or Create a Sample Application:**  
-   - Choose a simple application (for example, a basic Node.js, Python, or Java app that prints “Hello, Docker!” or serves a simple web page).
+### Задача 2: Создайте Dockerfile для тестового проекта.
+1. **Выберите или создайте пример приложения.:**  
+   - Выберите простое приложение (например, базовое приложение на Node.js, Python или Java, которое выводит «Hello, Docker!» или отображает простую веб-страницу).
 
-2. **Write a Dockerfile:**  
-   - Create a `Dockerfile` that defines how to build an image for your application.
-   - Include comments in your Dockerfile explaining each instruction.
-   - Build your image using:
+   app.py:
+
+   ```
+   from flask import Flask
+
+   app = Flask(__name__)
+
+   @app.route('/')
+   def hello_world():
+   return 'Hello World!'
+
+   if __name__ == '__main__':
+      app.run(host='0.0.0.0', port=8080)
+   
+   ```
+
+2. **Напишите Dockerfile:**  
+   - Создайте файл Dockerfile, определяющий способ сборки образа для вашего приложения.
+
+   Dockerfile:
+
+   ```
+   FROM python:3.11.14-alpine3.23
+
+   RUN pip install flask
+
+   COPY app.py .
+
+   CMD ["python3", "flask.py"]
+   ```
+   
+   - Добавьте в свой Dockerfile комментарии, поясняющие каждую инструкцию.
+      FROM - базовый образ
+      RUN - устанавливаем flask библиотеку
+      COPY - копируем файл с кодом
+      CMD - запускаем 
+
+   - Создайте свой образ, используя:
      ```bash
      docker build -t <your-username>/sample-app:latest .
      ```
 
-3. **Verify Your Build:**  
-   - Run your container locally to ensure it works as expected:
+   <img src="img/1.png" width="700"/>
+
+3. **Проверьте свою сборку:**  
+   - Запустите контейнер локально, чтобы убедиться, что он работает должным образом:
      ```bash
      docker run -d -p 8080:80 <your-username>/sample-app:latest
      ```
-   - Verify the container is running with:
+   - Убедитесь, что контейнер запущен, с помощью:
      ```bash
      docker ps
      ```
-   - Check logs using:
+   - Проверьте логи с помощью:
      ```bash
      docker logs <container_id>
      ```
+
+   <img src="img/2.png" width="700"/>
 
 ---
 
