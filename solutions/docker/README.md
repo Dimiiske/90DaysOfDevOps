@@ -94,67 +94,100 @@
 
 ---
 
-### Task 3: Explore Docker Terminologies and Components
-1. **Document Key Terminologies:**  
-   - In your `solution.md`, list and briefly describe key Docker terms such as image, container, Dockerfile, volume, and network.
-   - Explain the main Docker components (Docker Engine, Docker Hub, etc.) and how they interact.
+### Задача 3: Изучите терминологию и компоненты Docker.
+1. **Ключевые термины документа:**  
+   - В файле `solution.md` перечислите и кратко опишите ключевые термины Docker, такие как образ, контейнер, Dockerfile, том и сеть.
+   - Объясните основные компоненты Docker (Docker Engine, Docker Hub и т. д.) и как они взаимодействуют.
 
 ---
 
-### Task 4: Optimize Your Docker Image with Multi-Stage Builds
-1. **Implement a Multi-Stage Docker Build:**  
-   - Modify your existing `Dockerfile` to include multi-stage builds.  
-   - Aim to produce a lightweight, **distroless** (or minimal) final image.
-2. **Compare Image Sizes:**  
-   - Build your image before and after the multi-stage build modification and compare their sizes using:
+### Задача 4: Оптимизируйте свой образ Docker с помощью многоэтапной сборки.
+1. **Реализуйте многоэтапную сборку Docker.:**  
+   - Измените существующий файл `Dockerfile`, чтобы включить многоэтапную сборку. 
+   - Цель состоит в том, чтобы получить лёгкое, **без лишних элементов** (или минималистичное) итоговое изображение.
+
+   ```
+   FROM python:3.11.14-alpine3.23 AS base
+
+   WORKDIR /app
+
+   FROM base AS installer 
+
+   RUN pip install flask
+
+   FROM installer AS app
+
+   COPY app.py .
+
+   CMD ["python3", "/app/app.py"]
+   ```
+2. **Сравните размеры изображений:**  
+   - Создайте образ до и после многоэтапной модификации сборки и сравните их размеры, используя:
      ```bash
      docker images
      ```
-3. **Document the Differences:**  
-   - Explain in `solution.md` the benefits of multi-stage builds and the impact on image size.
+3. **Задокументируйте различия:**  
+   - В файле `solution.md` объясните преимущества многоэтапной сборки и ее влияние на размер образа.
 
 ---
 
-### Task 5: Manage Your Image with Docker Hub
-1. **Tag Your Image:**  
-   - Tag your image appropriately:
+### Задача 5: Управляйте своими образами с помощью Docker Hub.
+1. **Затегируйте свой образ:**  
+   - Добавьте к изображению соответствующие теги.:
      ```bash
      docker tag <your-username>/sample-app:latest <your-username>/sample-app:v1.0
      ```
-2. **Push Your Image to Docker Hub:**  
-   - Log in to Docker Hub if necessary:
+
+     <img src="img/4.png" width="700"/>
+
+2. **Загрузите свой образ в Docker Hub.:**  
+   - При необходимости войдите в Docker Hub.:
      ```bash
      docker login
      ```
-   - Push the image:
+
+      <img src="img/3.png" width="700"/>
+
+   - Запушьте образ:
      ```bash
      docker push <your-username>/sample-app:v1.0
      ```
-3. **(Optional) Pull the Image:**  
+
+     <img src="img/5.png" width="700"/>
+
+3. **(Optional) Скачайте образ:**  
    - Verify by pulling your image:
      ```bash
      docker pull <your-username>/sample-app:v1.0
      ```
 
+      <img src="img/6.png" width="700"/>
+
 ---
 
-### Task 6: Persist Data with Docker Volumes
-1. **Create a Docker Volume:**  
-   - Create a Docker volume:
+### Задача 6: Сохранение данных с помощью томов Docker
+1. **Создайте том Docker.:**  
+   - Создайте том Docker.:
      ```bash
      docker volume create my_volume
      ```
-2. **Run a Container with the Volume:**  
-   - Run a container using the volume to persist data:
+
+   <img src="img/7.png" width="700"/>
+
+2. **Запустите контейнер с использованием тома.:**  
+   - Запустите контейнер, используя том для сохранения данных.:
      ```bash
      docker run -d -v my_volume:/app/data <your-username>/sample-app:v1.0
      ```
-3. **Document the Process:**  
-   - In `solution.md`, explain how Docker volumes help with data persistence and why they are useful.
+
+   <img src="img/8.png" width="700"/>
+
+3. **Документируйте процесс:**  
+   - В файле `solution.md` объясните, как тома Docker помогают обеспечить сохранение данных и почему они полезны.
 
 ---
 
-### Task 7: Configure Docker Networking
+### Задача 7: Настройка сети Docker
 1. **Create a Custom Docker Network:**  
    - Create a custom Docker network:
      ```bash
@@ -232,25 +265,6 @@
 
 ---
 
-## 📢 How to Submit
-
-1. **Push Your Final Work:**  
-   - Ensure that your complete project—including your `Dockerfile`, `docker-compose.yml`, `solution.md`, and any additional files (e.g., the Docker Scout report if saved)—is committed and pushed to your repository.  
-   - Verify that all your changes are visible in your repository.
-
-2. **Create a Pull Request (PR):**  
-   - Open a PR from your working branch (e.g., `docker-challenge`) to the main repository.  
-   - Use a clear and descriptive title, for example:  
-     ```
-     Week 5 Challenge - DevOps Batch 9: Docker Basics & Advanced Challenge
-     ```
-   - In the PR description, include the following details:
-     - A brief summary of your approach and the tasks you completed.
-     - A list of the key Docker commands used during the challenge.
-     - Any insights or challenges you encountered (e.g., lessons learned from multi-stage builds or Docker Scout analysis).
-
----
-
 ## Additional Resources
 
 - **[Docker Documentation](https://docs.docker.com/)**  
@@ -259,7 +273,3 @@
 - **[Docker Compose](https://docs.docker.com/compose/)**  
 - **[Docker Scan (Vulnerability Scanning)](https://docs.docker.com/engine/scan/)**  
 - **[Containerization vs. Virtualization](https://www.docker.com/resources/what-container)**
-
----
-
-Happy coding and best of luck with this Docker challenge! Document your journey thoroughly in `solution.md` and refer to these resources for additional guidance.
