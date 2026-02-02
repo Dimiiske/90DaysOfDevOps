@@ -188,37 +188,53 @@
 ---
 
 ### Задача 7: Настройка сети Docker
-1. **Create a Custom Docker Network:**  
-   - Create a custom Docker network:
+1. **Создание собственной сети Docker:**  
+   - Создание собственной сети Docker:
      ```bash
      docker network create my_network
      ```
-2. **Run Containers on the Same Network:**  
-   - Run two containers (e.g., your sample app and a simple database like MySQL) on the same network to demonstrate inter-container communication:
+
+2. **Запуск контейнеров в одной сети.:**  
+   - Запустите два контейнера (например, ваше тестовое приложение и простую базу данных, такую ​​как MySQL) в одной сети, чтобы продемонстрировать взаимодействие между контейнерами:
      ```bash
      docker run -d --name sample-app --network my_network <your-username>/sample-app:v1.0
      docker run -d --name my-db --network my_network -e MYSQL_ROOT_PASSWORD=root mysql:latest
      ```
-3. **Document the Process:**  
-   - In `solution.md`, describe how Docker networking enables container communication and its significance in multi-container applications.
+
+   <img src="img/9.png" width="700"/>
+
+   <img src="img/10.png" width="700"/>
+
+   <img src="img/11.png" width="700"/>
+
+3. **Документируйте процесс:**  
+   - В файле `solution.md` опишите, как сетевые возможности Docker обеспечивают взаимодействие между контейнерами и каково их значение в многоконтейнерных приложениях.
 
 ---
 
-### Task 8: Orchestrate with Docker Compose
-1. **Create a docker-compose.yml File:**  
-   - Write a `docker-compose.yml` file that defines at least two services (e.g., your sample app and a database).
-   - Include definitions for services, networks, and volumes.
-2. **Deploy Your Application:**  
-   - Bring up your application using:
+### Задача 8: Организуйте работу с помощью Docker Compose.
+1. **Создайте docker-compose.yml File:**  
+   - Создайте файл `docker-compose.yml`, в котором определены как минимум две службы (например, ваше тестовое приложение и база данных).
+   - Включите определения для услуг, сетей и вольюмов.
+2. **Разверните ваше приложение:**  
+   - Запустите приложение, используя:
      ```bash
      docker-compose up -d
      ```
-   - Test the setup, then shut it down using:
+
+   <img src="img/11.png" width="700"/>
+
+
+   - Проверьте работу системы, затем выключите её с помощью:
      ```bash
      docker-compose down
      ```
-3. **Document the Process:**  
-   - Explain each service and configuration in your `solution.md`.
+
+   <img src="img/12.png" width="700"/>
+
+
+3. **Документируйте процесс:**  
+   - Подробно опишите каждую службу и конфигурацию в вашем файле `solution.md`.
 
 ---
 

@@ -1,0 +1,21 @@
+---
+
+services:
+  sample-app:
+    image: s21dimiiske/sample-app:v1.0
+    container_name: sample-app
+    volumes:
+      - ./my_volume:/app/data
+    networks:
+      - my_network
+  my-db:
+    image: mysql:latest
+    container_name: my-db
+    env_file:
+      - .env
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
