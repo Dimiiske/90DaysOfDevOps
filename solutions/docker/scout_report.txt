@@ -1,0 +1,64 @@
+
+
+## Overview
+
+                   │               Analyzed Image               
+───────────────────┼────────────────────────────────────────────
+ Target            │  s21dimiiske/sample-app:v1.0               
+   digest          │  36387b41033e                              
+   platform        │ linux/arm64                                
+   provenance      │ git@github.com:Dimiiske/90DaysOfDevOps.git 
+                   │  https://github.com/Dimiiske/90DaysOfDevOps/blob/a2e851a7987f11b9cfe6a7756c972bab6d1535e5  
+   vulnerabilities │    0C     1H     2M     1L                 
+   size            │ 27 MB                                      
+   packages        │ 76                                         
+
+
+## Packages and Vulnerabilities
+
+   0C     1H     0M     0L  wheel 0.45.1
+pkg:pypi/wheel@0.45.1
+
+    ✗ HIGH CVE-2026-24049 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+      https://scout.docker.com/v/CVE-2026-24049?s=github&n=wheel&t=pypi&vr=%3E%3D0.40.0%2C%3C%3D0.46.1
+      Affected range : >=0.40.0                                     
+                     : <=0.46.1                                     
+      Fixed version  : 0.46.2                                       
+      CVSS Score     : 7.1                                          
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H 
+    
+
+   0C     0H     1M     1L  pip 24.0
+pkg:pypi/pip@24.0
+
+    ✗ MEDIUM CVE-2025-8869 [Improper Link Resolution Before File Access ('Link Following')]
+      https://scout.docker.com/v/CVE-2025-8869?s=github&n=pip&t=pypi&vr=%3C%3D25.2
+      Affected range : <=25.2                                                          
+      Fixed version  : 25.3                                                            
+      CVSS Score     : 5.9                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:A/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N 
+    
+    ✗ LOW CVE-2026-1703 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+      https://scout.docker.com/v/CVE-2026-1703?s=github&n=pip&t=pypi&vr=%3C26.0
+      Affected range : <26.0                                                           
+      Fixed version  : 26.0                                                            
+      CVSS Score     : 2.0                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N 
+    
+
+   0C     0H     1M     0L  busybox 1.37.0-r30
+pkg:apk/alpine/busybox@1.37.0-r30?os_name=alpine&os_version=3.23
+
+    ✗ MEDIUM CVE-2025-60876
+      https://scout.docker.com/v/CVE-2025-60876?s=alpine&n=busybox&ns=alpine&t=apk&osn=alpine&osv=3.23&vr=%3C%3D1.37.0-r30
+      Affected range : <=1.37.0-r30 
+      Fixed version  : not fixed    
+    
+
+
+4 vulnerabilities found in 3 packages
+  CRITICAL  0 
+  HIGH      1 
+  MEDIUM    2 
+  LOW       1 
+

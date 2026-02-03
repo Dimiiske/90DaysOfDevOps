@@ -238,50 +238,55 @@
 
 ---
 
-### Task 9: Analyze Your Image with Docker Scout
-1. **Run Docker Scout Analysis:**  
-   - Execute Docker Scout on your image to generate a detailed report of vulnerabilities and insights:
+### Задача 9: Проанализируйте свой образ с помощью Docker Scout.
+1. **Запуск анализа Docker Scout:**  
+   - Запустите Docker Scout для вашего образа, чтобы сгенерировать подробный отчет об уязвимостях и получить ценную информацию:
      ```bash
      docker scout cves <your-username>/sample-app:v1.0
      ```
-   - Alternatively, if available, run:
+
+     <img src="img/13.png" width="700"/>
+     
+   - В качестве альтернативы, если это возможно, выполните следующую команду:
      ```bash
      docker scout quickview <your-username>/sample-app:v1.0
      ```
-     to get a summarized view of the image’s security posture.
-   - **Optional:** Save the output to a file for further analysis:
+     чтобы получить общее представление о состоянии безопасности изображения.
+
+     <img src="img/14.png" width="700"/>
+
+   - **Опционально:** Сохраните результат в файл для дальнейшего анализа:
      ```bash
      docker scout cves <your-username>/sample-app:v1.0 > scout_report.txt
      ```
 
-2. **Review and Interpret the Report:**  
-   - Carefully review the output and focus on:
-     - **List of CVEs:** Identify vulnerabilities along with their severity ratings (e.g., Critical, High, Medium, Low).
-     - **Affected Layers/Dependencies:** Determine which image layers or dependencies are responsible for the vulnerabilities.
-     - **Suggested Remediations:** Note any recommended fixes or mitigation strategies provided by Docker Scout.
-   - **Comparison Step:** If possible, compare this report with previous builds to assess improvements or regressions in your image's security posture.
-   - If Docker Scout is not available in your environment, document that fact and consider using an alternative vulnerability scanner (e.g., Trivy, Clair) for a comparative analysis.
+2. **Проанализируйте и проанализируйте отчет:**  
+   - Внимательно изучите результаты и сосредоточьтесь на:
+     - **Список уязвимостей CVE:** Выявите уязвимости и определите их степень серьезности (например, критическая, высокая, средняя, ​​низкая).
+     - **Затронутые слои/зависимости:** Определите, какие слои или зависимости образа являются причиной уязвимостей.
+     - **Предложенные меры по устранению проблем:** Обратите внимание на любые рекомендуемые исправления или стратегии смягчения последствий, предоставленные Docker Scout.
+   - **Шаг сравнения:** По возможности сравните этот отчет с предыдущими сборками, чтобы оценить улучшения или ухудшения в уровне безопасности вашего образа.
+   - Если Docker Scout недоступен в вашей среде, задокументируйте этот факт и рассмотрите возможность использования альтернативного сканера уязвимостей (например, Trivy, Clair) для сравнительного анализа.
 
-3. **Document Your Findings:**  
-   - In your `solution.md`, provide a detailed summary of your analysis:
-     - List the identified vulnerabilities along with their severity levels.
-     - Specify which layers or dependencies contributed to these vulnerabilities.
-     - Outline any actionable recommendations or remediation steps.
-     - Reflect on how these insights might influence your image optimization or overall security strategy.
-   - **Optional:** Include screenshots or attach the saved report file (`scout_report.txt`) as evidence of your analysis.
-
----
-
-### Task 10: Documentation and Critical Reflection
-1. **Update `solution.md`:**  
-   - List all the commands and steps you executed.
-   - Provide explanations for each task and detail any improvements made (e.g., image optimization with multi-stage builds).
-2. **Reflect on Docker’s Impact:**  
-   - Write a brief reflection on the importance of Docker in modern software development, discussing its benefits and potential challenges.
+3. **Задокументируйте свои выводы:**  
+   - В файле `solution.md` предоставьте подробное описание проведенного анализа:
+     - Перечислите выявленные уязвимости и уровни их серьезности.
+     - Укажите, какие слои или зависимости способствовали возникновению этих уязвимостей.
+     - Изложите все практические рекомендации или шаги по устранению проблемы.
+     - Подумайте, как эти выводы могут повлиять на оптимизацию ваших изображений или на вашу общую стратегию безопасности.
+   - **Дополнительно:** В качестве подтверждения вашего анализа приложите скриншоты или сохраненный файл отчета (`scout_report.txt`).
 
 ---
 
-## Additional Resources
+### Задача 10: Документирование и критическое осмысление
+1. **Обновите `solution.md`:**  
+   - Перечислите все выполненные вами команды и шаги.
+   - Предоставьте пояснения к каждой задаче и подробно опишите любые внесенные улучшения (например, оптимизация изображений с помощью многоэтапной сборки).
+2. **Поразмышляйте о влиянии Docker:**  
+   - Напишите краткое размышление о важности Docker в современной разработке программного обеспечения, обсудив его преимущества и потенциальные проблемы.
+---
+
+## Дополнительные ресурсы
 
 - **[Docker Documentation](https://docs.docker.com/)**  
 - **[Docker Hub](https://docs.docker.com/docker-hub/)**  
